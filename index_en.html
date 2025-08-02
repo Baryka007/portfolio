@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="code.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+        <header>
+
+            <p class="header-span">
+            <a href="https://www.linkedin.com/in/b%C3%A1r%C3%A1ny-p%C3%A9ter-2481b12b4/" target="_blank" rel="noopener noreferrer" class="social-link">
+  <i class="fa-brands fa-linkedin"></i> Bárány Péter
+</a>
+
+            <i class="fa-solid fa-paper-plane icon"></i> Around the world
+            <i class="fa-solid fa-envelope icon"></i> baranypepe@gmail.com
+            <i class="fa-solid fa-phone icon"></i> +36 20 518 1698
+            </p>
+
+        </header>
+
+<button id="language-toggle">
+  <img src="img/en-us.png" alt="English" width="45">
+</button>
+
+<div class="timeline">
+  <span class="dot active" data-target="about-me"></span>
+  <span class="dot" data-target="GearBench"></span>
+  <span class="dot" data-target="Chess"></span>
+  <span class="dot" data-target="Chess-Description0"></span>
+  <span class="dot" data-target="Chess-Description1"></span>
+  <span class="dot" data-target="Chess-Description2"></span>
+  <span class="dot" data-target="TCP-IP"></span>
+  <span class="dot" data-target="TCP-IP-Description"></span>
+  <span class="dot" data-target="Last-Word"></span>
+  <!-- ... -->
+</div>
+
+
+        <section id="about-me" class="left-section first-section fade-up" data-aos="fade-up">
+        <div class="profile-wrapper">
+            <div class="profile-background"></div>
+            <img src="profile.png" alt="Hey! It's Me!" class="profile-pic">
+        </div>
+            <div class="intro-text">
+                <h1>Welcome!</h1>
+                <p class="short-intro">
+                    I’m a software developer — but not your typical classroom-trained kind.<br>
+                    <strong>I made the decision at 12</strong> that this would be my path, and I’ve stayed on it ever since.<br>
+                    I didn’t learn modern programming in school, but I completed <strong>three C# courses</strong> and a <strong>Full Stack .NET bootcamp</strong> <em>entirely on my own through Udemy</em>.<br>
+                    What I wasn’t taught, I <em>figured out myself</em>.<br>
+                    If there’s a more determined dev out there... honestly? I wish them the best of luck.
+                </p>
+            </div>
+        </div>
+
+
+        </section>
+
+        <section id="GearBench"class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+            <h2>My Projects – Carving My Own Path</h2>
+                
+                 <a href="https://github.com/Baryka007/GearBench" class="social-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i><h3>GearBench (C# + native C++ DLL)</h3></a>
+                <p>
+                    A custom memory benchmarking tool that measures real DRAM speed — no fluff, no tricks.  
+                    It uses cache bypassing, AVX2, and true multithreading.  
+                    Results can be uploaded via Supabase integration, and the app also includes a smart compare system that visualizes data using a radar chart.
+                </p>
+                
+
+            <div class="image-wrapper" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+            <img src="/img/GearBench.PNG" alt="GearBench" class="picture">
+            </div>
+            </div>
+
+        </section>
+
+        <section id="Chess" class="section fade-up" data-aos="fade-up"
+        data-aos-anchor-placement="top-center">
+           <h2>In Development: Chess Program</h2>
+                <p>
+                This is a work-in-progress project that’s currently in <strong>full testing phase</strong>.  
+                It’s the <strong>most complex logic-based application</strong> I’ve built so far — a custom chess engine written in <strong>C# and WPF</strong>.  
+                The debug window in the screenshot shows just how many background operations and checks happen during a single move.
+                </p>
+
+                <p>
+                <strong>Goal:</strong> build a stable, fully autonomous chess AI that handles advanced rules like <em>en passant</em>, castling, and checkmate detection.  
+                Even though it’s not finished yet, <strong>I’ve already learned a ton</strong> — from the basics of AI and state management to building complex object-oriented systems and effective debugging techniques.
+                </p>
+
+                <p>
+                The project is constantly evolving, and <strong>I’ll be releasing a public demo soon</strong>.
+                </p>
+
+  <div class="image-wrapper" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+    <img src="/img/Chess-Bary.png" alt="Sakk program debug nézet" class="picture">
+  </div>
+        </section>
+
+        <section id="Chess-Description0" class="section fade-up" data-aos="fade-up"
+        data-aos-anchor-placement="top-center">
+            <h2>Chess C# Breakdown</h2>
+<p>
+  💡 <strong>This chess engine wasn’t built from a template.</strong><br>
+  Every move is driven by my own custom logic, built completely from the ground up.<br>
+  At the heart of the system are a bunch of <code>private bool</code> functions asking the game questions like:
+</p>
+<ul>
+  <li>“Can the king escape check?”</li>
+  <li>“Is this square under attack?”</li>
+  <li>“Is an <em>en passant</em> move possible?”</li>
+  <li>“Is it checkmate?”</li>
+</ul>
+<p>
+  This structure not only leads to a clean, object-oriented architecture,<br>
+  but also reflects an engineering mindset:<br>
+  I break problems down into small, focused questions —<br>
+  and for each question, there's a clear, precise answer.
+</p>
+
+        </section>
+
+
+
+
+<section id="Chess-Description1" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+<h2>Chess C# Breakdown</h2>
+
+
+<div class="code-box blur-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
+    <pre><code class="language-csharp">
+        private bool HasValidEscapeMove(string player)
+        {
+            var kingPosition = FindKingPosition(player);
+
+            // Ha a király léphet a sakkból, vagy a bábu képes védeni a királyt
+            for (int targetRow = kingPosition.row - 1; targetRow <= kingPosition.row + 1; targetRow++)
+            {
+                for (int targetCol = kingPosition.col - 1; targetCol <= kingPosition.col + 1; targetCol++)
+                {
+                    if (IsInsideBoard(targetRow, targetCol) &&
+                        IsValidMove("king", kingPosition, (targetRow, targetCol)) &&
+                        !IsSquareAttacked((targetRow, targetCol), currentPlayer))
+                    {
+                        return true; // Van érvényes lépés a királynak
+                    }
+                }
+            }</code></pre>
+</div>
+
+</section>
+
+
+<section id="Chess-Description2" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+<h2>Chess C# Breakdown</h2>
+<p>
+  It’s clear that within the first few lines, this function already calls three other functions by line six...<br><br>
+  <strong>Right now, 24 different functions are involved in handling just the move logic!</strong>
+</p>
+
+
+
+<div class="code-box blur-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
+    <pre><code class="language-csharp">
+        private bool IsKingInCheck(string player)
+        {
+            var kingPosition = FindKingPosition(player);
+            var opponentPieces = GetOpponentPieces(lastPlayer);
+
+            foreach (var opponentPiece in opponentPieces)
+            {
+                if (IsValidMove(chessBoardState[opponentPiece.row, opponentPiece.col], opponentPiece, kingPosition))
+                {
+                    return true; // Ha bármelyik ellenfél bábuja elérheti a királyt, akkor sakkban van
+                }
+            }
+
+            return false; // Ha nincs sakk, akkor false
+        }</code></pre>
+</div>
+
+</section>
+
+
+<section id="TCP-IP" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+ <h2>C# Server–Client Asynchronous Handler App</h2>
+<p>
+  This project is a system built from a <strong>C# WPF client</strong> and a <strong>console-based server</strong>, communicating via the <code>TCP</code> protocol. The client and server send <code>commands</code> back and forth, separated by a <code>‘;’</code> delimiter.
+</p>
+
+<p>
+  On initial connection, the server <strong>generates a unique port</strong> for each client, allowing it to handle thousands of simultaneous connections. It's a clean and efficient approach to scalable communication.
+</p>
+
+<div class="quote-box" data-aos="zoom-out-down" data-aos-anchor-placement="top-bottom">
+  <em>🎯 Not a complex architecture — and that’s exactly the point.</em><br>
+  The system is simple, stable, and maintainable, and <strong>does exactly what it’s meant to</strong>: automatically deliver games, files, or updates to client machines.
+</div>
+
+<p>
+  <strong>💡 I learned a lot through this project:</strong>
+</p>
+<ul>
+  <li>about asynchronous TCP communication</li>
+  <li>about port management and resource control</li>
+  <li>about building user-friendly client UIs (in WPF)</li>
+  <li>and that sometimes simplicity is the most professional solution</li>
+</ul>
+
+
+</section>
+
+
+
+
+<section id="TCP-IP-Description"class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+    <p>
+  The following example shows how the server starts up:  
+  after loading the necessary data (like a client list),  
+  it enters a <code>while</code> loop to continuously listen for incoming connections.  
+</p>
+<p>
+  When a client connects, the server <strong>asynchronously</strong> launches a new function  
+  dedicated solely to handling that specific client.  
+  This allows the main loop to keep accepting new connections without interruption,  
+  while each client gets <em>its own dedicated "worker thread"</em>.
+</p>
+
+
+        <div class="code-box blur-card" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+            <pre><code class="language-csharp">
+            static async Task Main(string[] args)
+            {
+                IPAddress ipAddress = IPAddress.Any; // Minden IP címről engedélyezünk kapcsolatot!
+                int port = 12345;
+        
+                TcpListener listener = new TcpListener(ipAddress, port);
+                listener.Start();
+                string localIpAddress = GetLocalIpAddress();
+                Console.Write("Kérlek add meg a games.txt fájlt!: ");
+                string gameListFilePath = Console.ReadLine(); // Beolvassuk a .txt fájlt amiben a játékok vannak!
+                // Megvizsgáljuk, hogy a fájl létezik -e!
+                if (!File.Exists(gameListFilePath))
+                {
+                    Console.WriteLine("A fájl nem létezik.");
+                    Console.ReadLine();
+                    Environment.Exit(1); // Ha nem létezik akkor kilép a program!
+                }
+                Console.WriteLine("Server IP: " + localIpAddress); // Kiírjuk a szerver IP címét
+                Console.WriteLine("Server Port: " + port); // Kiírjuk a szerver portját
+                Console.WriteLine("Szerver elindult, várakozás a kliensekre..."); // Bullshit
+                while (true)
+                {
+                    // Ez itt elvileg addig fut, amíg nincs csatlakozás O.o
+                    TcpClient client = await listener.AcceptTcpClientAsync();
+                    Console.WriteLine("Kliens csatlakozott.");
+                    _ = HandleClient(client, gameListFilePath); // Aszinkron módon kezeljük a klienseket, szóval futhat tovább ez a While ciklus:)
+                }
+            }
+        
+            static async Task HandleClient(TcpClient client, string gameListFilePath)
+            {</code></pre>
+        </div>
+</section>
+
+
+<section id="Last-Word" class="section fade-up" data-aos="fade-up" data-aos-anchor-placement="top-center">
+ <h2>If you’ve made it this far...</h2>
+<p>
+  ...then maybe it’s already clear how passionate I am about programming. <br>
+  I’m not perfect at everything, but whatever I do, I do it <strong>with heart</strong>. <br>
+  Every project is another step forward — and I have no plans of stopping.
+</p>
+<p>
+  If you feel like I’d be a great fit for your team, <strong>don’t hesitate to reach out!</strong><br>
+  (And hey — if you just want to send some praise, I’ll gladly take that too. 😄)
+</p>
+
+</section>
+
+
+        <footer data-aos="section fade-up">
+            <p>&copy; 2025 Bárány Péter</p>
+        </footer>
+
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="script.js"></script>
+        <script src="code.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#language-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: url("background/16.9_background.svg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #0f172a;
+  overflow-x: hidden;
+}
+
+footer {
+    padding: 2rem;
+    background: #1e293b56;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;      /* Függőlegesen középre */
+    background: #1e293b56;
+    height: 50px;
+    overflow: hidden;
+    justify-content: center;  /* Vízszintesen középre */
+    text-align: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+header.hide {
+  transform: translateY(-100%);
+}
+
+
+.left-section {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 30rem;
+  scroll-snap-align: start;
+  height: 100vh; 
+}
+
+.right-section {
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0rem 15rem;
+  scroll-snap-align: start;
+  height: 100vh; 
+}
+
+.section {
+
+    height: 100vh; 
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-section {
+  margin-top: 0px; /* == Header magasság */
+}
+
+h1, h2 {
+    margin-bottom: 0rem;
+    color: #e2e8f0;
+    margin-top: 2rem;
+    font-size: 46px;
+}
+
+p {
+    max-width: 600px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.header-span {
+    max-width: 920px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.profile-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+  margin-bottom: 1rem;
+  margin-right: 10rem;
+}
+
+
+
+ .profile-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 235px;
+  height: 235px;
+  border-radius: 50%;
+  background-color: rgb(8, 55, 59); 
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 85%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 85%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+} 
+
+.profile-pic {
+  width: 250px;
+  height: auto;
+  display: block;
+
+  position: relative;
+  z-index: 1;
+  
+  object-fit: cover;
+
+  /* Alul áttűnés */
+  -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7); /* átlátszó fekete háttér */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-content {
+  background: #222;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 35px; /* vagy 12px, ha jobban esik */
+  color: #f8fafc; /* opcionális: fehér szín */
+}
+
+.social-link {
+  text-decoration: none;
+  color: inherit; /* vagy pl. white */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-link:hover {
+  color: #38bdf8; /* vagy amit akarsz */
+}
+
+.picture {
+  max-width: 920px;
+  max-height: 920px;
+  -webkit-mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 45%, transparent 90%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;  /* vízszintesen középre */
+  align-items: center;      /* függőlegesen is középre, ha magasság is van */
+  height: auto;             /* vagy pl. 100vh ha középen akarod látni a képet */
+}
+
+.blur-card {
+    background: #1e293b56;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: inline-block;
+    padding: 1rem;
+    max-width: 100%; /* ha mobilon ne lógjon ki */
+    box-sizing: border-box;
+}
+
+.quote-box {
+  background: #1e293b88;
+  padding: 1rem;
+  border-left: 4px solid #38bdf8;
+  margin: 1rem 0;
+  font-style: italic;
+  border-radius: 1rem;
+}
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #38bdf8;
+  width: 0%;
+  z-index: 9999;
+}
+
+/* Webkit-böngészők */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #38bdf8;
+  border-radius: 10px;
+}
+
+
+footer {
+    text-align: center;
+    background: #0b464341;
+    backdrop-filter: blur(10px);
+  }
+
+
+.dot:hover {
+  box-shadow: 0 0 8px 4px rgba(0, 187, 255, 0.7);
+  background-color: #00bbff;
+}
+
+  .timeline {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.timeline .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timeline .dot.active {
+  background-color: #3b82f6;
+  box-shadow: 0 0 5px #3b82f6;
+}
+
+
+@media (max-width: 768px) {
+    body {
+          margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: url("background/9.16_background.svg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #0f172a;
+  overflow-x: hidden;
+    }
+
+  header {
+    height: 60px;
+    padding: 0 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+.left-section,
+  .right-section,
+  .section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 👈 ne középre */
+    padding: 2rem 1rem;
+    min-height: 100vh; /* 👈 stabilitást ad */
+    height: auto;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .profile-wrapper {
+    margin: 0 auto 1rem auto;
+    width: 120px;
+    height: 120px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-right: 10rem;
+  }
+
+  .profile-pic {
+    width: 180px;
+  }
+
+  .profile-background {
+    width: 180px;
+    height: 180px;
+  }
+
+  h1, h2 {
+    font-size: 28px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  p, .header-span {
+    font-size: 16px;
+    padding: 0 0.5rem;
+    max-width: 90%;
+  }
+
+  .picture {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .image-wrapper {
+    padding: 0.5rem;
+  }
+
+  .blur-card {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .modal-content {
+    font-size: 0.8rem;
+    width: 95%;
+  }
+
+  .icon {
+    margin-left: 15px;
+  }
+}
+
+.parallax-bg {
+  background-image: url("background/16.9_background.svg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+

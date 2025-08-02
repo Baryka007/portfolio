@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólió</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="code.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+        <header>
+
+            <p class="header-span">
+            <a href="https://www.linkedin.com/in/b%C3%A1r%C3%A1ny-p%C3%A9ter-2481b12b4/" target="_blank" rel="noopener noreferrer" class="social-link">
+  <i class="fa-brands fa-linkedin"></i> Bárány Péter
+</a>
+
+            <i class="fa-solid fa-paper-plane icon"></i> Magyarországon bárhol
+            <i class="fa-solid fa-envelope icon"></i> baranypepe@gmail.com
+            <i class="fa-solid fa-phone icon"></i> +36 20 518 1698
+        </p>
+        
+        </header>
+
+
+
+
+
+
+
+<div class="timeline">
+  <span class="dot active" data-target="about-me"></span>
+  <span class="dot" data-target="GearBench"></span>
+  <span class="dot" data-target="Chess"></span>
+  <span class="dot" data-target="Chess-Description0"></span>
+  <span class="dot" data-target="Chess-Description1"></span>
+  <span class="dot" data-target="Chess-Description2"></span>
+  <span class="dot" data-target="TCP-IP"></span>
+  <span class="dot" data-target="TCP-IP-Description"></span>
+  <span class="dot" data-target="Last-Word"></span>
+  <!-- ... -->
+</div>
+
+
+        <section id="about-me" class="left-section first-section fade-up" data-aos="fade-up">
+        <div class="profile-wrapper">
+            <div class="profile-background"></div>
+            <img src="profile.png" alt="Hey! It's Me!" class="profile-pic">
+        </div>
+            <div class="intro-text">
+                <h1>Üdvözöllek!</h1>
+                <p class="short-intro">
+                    Szoftverfejlesztő vagyok — de nem a klasszikus iskolapadból kikerülve.<br>
+                    <strong>12 évesen döntöttem el</strong>, hogy ezzel fogok foglalkozni, és azóta sem tértem le az útról.<br>
+                    Nem tanultam modern programozást az iskolában, de <strong>három C# kurzust</strong> és egy <strong>Full Stack .NET képzést</strong> végeztem el <em>teljesen önerőből a Udemy-n</Udemy-n></em>.<br>
+                    Amit nem tanítottak meg, azt <em>megtanultam magamtól</em>.<br>
+                    Ha van nálam elszántabb fejlesztőjelölt… őszintén? Sok sikert kívánok neki.
+                </p>
+            </div>
+        </div>
+
+
+        </section>
+
+        <section id="GearBench" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+            <h2>Fejlesztéseim – a saját utamon</h2>
+
+            <a href="https://github.com/Baryka007/GearBench" class="social-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i><h3>GearBench (C# + natív C++ DLL)</h3></a>
+            
+            <p>            
+                Saját memória benchmark szoftver, ami valós DRAM sebességet mér. Cache-kikerülés, AVX2, és valós threading.
+            Supabase integrációval feltölthetőek az eredmények. Egyúttal egy intelligens compare-system is a része a szoftvernek ami egy pókdiagramon keresztül hasonlít.</p>
+            <div class="image-wrapper" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+            <img src="/img/GearBench.PNG" alt="GearBench" class="picture">
+            </div>
+
+        </section>
+
+        <section id="Chess" class="section fade-up" data-aos="fade-up"
+        data-aos-anchor-placement="top-center">
+           <h2>Fejlesztés alatt: Sakk Program</h2>
+            <p>
+                Ez itt egy még készülőfélben lévő projektem, amely jelenleg <strong>teljes tesztfázisban</strong> van.
+                Ez a <strong>legösszetettebb logikai felépítésű programom</strong> eddig – egy saját készítésű sakkmotor, amit <strong>C# és WPF</strong> segítségével írok. A képen látható debug ablak is mutatja, mennyi háttérművelet és tesztelés zajlik egy-egy lépés során.
+            </p>
+
+            <p>
+                <strong>Cél:</strong> egy stabil, önállóan működő sakk AI rendszer, amely figyelembe veszi a bonyolult szabályokat, mint az <em>en passant</em>, sáncolás, sakk–matt detektálás stb.
+                Bár még nem teljes, <strong>már most rengeteget tanultam</strong> belőle: a mesterséges intelligencia alapjairól, állapotkezelésről, komplex objektum-orientált rendszerekről és hibakeresési módszerekről.
+            </p>
+            <p>
+                A projekt folyamatosan fejlődik, és <strong>hamarosan elérhetővé teszem a nyilvános demót</strong> is.
+            </p>
+  <div class="image-wrapper" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+    <img src="/img/Chess-Bary.png" alt="Sakk program debug nézet" class="picture">
+  </div>
+        </section>
+
+        <section id="Chess-Description0" class="section fade-up" data-aos="fade-up"
+        data-aos-anchor-placement="top-center">
+            <h2>Sakk C# magyarázatok</h2>
+    <p>
+        💡 <strong>Ez a sakkmotor nem egy sablon alapján készült.</strong><br>
+        Minden lépés mögött a saját logikám van, amit teljesen alulról építettem fel.<br>
+        A rendszer szíve egy csomó <code>private bool</code> függvény, amelyek olyan kérdéseket tesznek fel a játéknak, mint például:
+    </p>
+    <ul>
+        <li>„Kiléphet a király a sakkból?”</li>
+        <li>„Ez a mező támadás alatt áll?”</li>
+        <li>„Létezik <em>en passant</em> lehetőség?”</li>
+        <li>„Beállt a sakk–matt?”</li>
+    </ul>
+    <p>
+        Ez a struktúra nemcsak szép objektumorientált felépítést eredményez,<br>
+        hanem egyfajta mérnöki gondolkodásmódot is tükröz:<br>
+        darabokra szedem a problémát, kérdésekké bontom,<br>
+        és minden kérdésre egy önálló, precíz válasz születik.
+    </p>
+        </section>
+
+
+
+
+<section id="Chess-Description1" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+<h2>Sakk C# magyarázatok</h2>
+
+
+<div class="code-box blur-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
+    <pre><code class="language-csharp">
+        private bool HasValidEscapeMove(string player)
+        {
+            var kingPosition = FindKingPosition(player);
+
+            // Ha a király léphet a sakkból, vagy a bábu képes védeni a királyt
+            for (int targetRow = kingPosition.row - 1; targetRow <= kingPosition.row + 1; targetRow++)
+            {
+                for (int targetCol = kingPosition.col - 1; targetCol <= kingPosition.col + 1; targetCol++)
+                {
+                    if (IsInsideBoard(targetRow, targetCol) &&
+                        IsValidMove("king", kingPosition, (targetRow, targetCol)) &&
+                        !IsSquareAttacked((targetRow, targetCol), currentPlayer))
+                    {
+                        return true; // Van érvényes lépés a királynak
+                    }
+                }
+            }</code></pre>
+</div>
+
+</section>
+
+
+<section id="Chess-Description2" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+<h2>Sakk C# magyarázatok</h2>
+<p>Jól látható, hogy a függvény első pár sora már 3 másik függvényt meghív a függvény hatodik soráig...<br><br>
+<strong>Jelenleg 24 függvény vizsgálja csak a lépéseket!</strong></p>
+
+
+<div class="code-box blur-card" data-aos="fade-up" data-aos-anchor-placement="top-center">
+    <pre><code class="language-csharp">
+        private bool IsKingInCheck(string player)
+        {
+            var kingPosition = FindKingPosition(player);
+            var opponentPieces = GetOpponentPieces(lastPlayer);
+
+            foreach (var opponentPiece in opponentPieces)
+            {
+                if (IsValidMove(chessBoardState[opponentPiece.row, opponentPiece.col], opponentPiece, kingPosition))
+                {
+                    return true; // Ha bármelyik ellenfél bábuja elérheti a királyt, akkor sakkban van
+                }
+            }
+
+            return false; // Ha nincs sakk, akkor false
+        }</code></pre>
+</div>
+
+</section>
+
+
+<section id="TCP-IP" class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+  <h2>C# Server–Client Aszinkron kiszolgáló app</h2>
+  <p>
+    Ez a projekt egy <strong>C# WPF kliensből</strong> és egy <strong>konzolos szerverből</strong> álló rendszer, ahol a kommunikáció <code>TCP</code> protokollon keresztül történik. A kliens és a szerver <code>parancsokat</code> küldenek egymásnak, melyeket <code>‘;’</code> jellel választanak el.
+  </p>
+
+  <p>
+    Az első kapcsolatfelvételkor a szerver <strong>egyedi portszámot generál</strong> minden klienshez, így képes akár több ezer párhuzamos kapcsolatot is kezelni. Ez egy elegáns és hatékony módja a skálázható kommunikációnak.
+  </p>
+
+  <div class="quote-box" data-aos="zoom-out-down" data-aos-anchor-placement="top-bottom">
+    <em>🎯 Nem bonyolult architektúra – de pont ez benne a lényeg.</em><br>
+    A rendszer egyszerű, stabil, karbantartható, és <strong>tökéletesen ellátja a feladatát</strong>: játékok, fájlok vagy frissítések automatikus továbbítása a kliensgépekre.
+  </div>
+
+  <p>
+    <strong>💡 A projekt során rengeteget tanultam:</strong>
+  </p>
+  <ul>
+    <li>asynchronous TCP kommunikációról</li>
+    <li>portmenedzsmentről és erőforráskezelésről</li>
+    <li>felhasználóbarát kliens UI-ról (WPF-ben)</li>
+    <li>és arról, hogy néha az egyszerűség a legprofibb megoldás</li>
+  </ul>
+
+</section>
+
+
+
+
+<section id="TCP-IP-Description"class="section fade-up" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+    <p>
+    Az alábbi példában látható, hogyan indul el a szerver működése:  
+    miután betölti a szükséges adatokat (például egy klienslistát),  
+    egy <code>while</code> ciklusban folyamatosan figyeli az új beérkező kapcsolatokat.  
+</p>
+<p>
+    Amint egy kliens csatlakozik, a szerver <strong>aszinkron módon</strong> elindít egy új függvényt,  
+    amely kizárólag az adott kliens kezeléséért felel.  
+    Így a fő ciklus zavartalanul tovább fogadhat új kapcsolatokat,  
+    minden csatlakozó kliens pedig <em>saját külön „munkaszálat”</em> kap.
+</p>
+
+        <div class="code-box blur-card" data-aos="zoom-out-down" data-aos-anchor-placement="top-center">
+            <pre><code class="language-csharp">
+            static async Task Main(string[] args)
+            {
+                IPAddress ipAddress = IPAddress.Any; // Minden IP címről engedélyezünk kapcsolatot!
+                int port = 12345;
+        
+                TcpListener listener = new TcpListener(ipAddress, port);
+                listener.Start();
+                string localIpAddress = GetLocalIpAddress();
+                Console.Write("Kérlek add meg a games.txt fájlt!: ");
+                string gameListFilePath = Console.ReadLine(); // Beolvassuk a .txt fájlt amiben a játékok vannak!
+                // Megvizsgáljuk, hogy a fájl létezik -e!
+                if (!File.Exists(gameListFilePath))
+                {
+                    Console.WriteLine("A fájl nem létezik.");
+                    Console.ReadLine();
+                    Environment.Exit(1); // Ha nem létezik akkor kilép a program!
+                }
+                Console.WriteLine("Server IP: " + localIpAddress); // Kiírjuk a szerver IP címét
+                Console.WriteLine("Server Port: " + port); // Kiírjuk a szerver portját
+                Console.WriteLine("Szerver elindult, várakozás a kliensekre..."); // Bullshit
+                while (true)
+                {
+                    // Ez itt elvileg addig fut, amíg nincs csatlakozás O.o
+                    TcpClient client = await listener.AcceptTcpClientAsync();
+                    Console.WriteLine("Kliens csatlakozott.");
+                    _ = HandleClient(client, gameListFilePath); // Aszinkron módon kezeljük a klienseket, szóval futhat tovább ez a While ciklus:)
+                }
+            }
+        
+            static async Task HandleClient(TcpClient client, string gameListFilePath)
+            {</code></pre>
+        </div>
+</section>
+
+
+<section id="Last-Word" class="section fade-up" data-aos="fade-up" data-aos-anchor-placement="top-center">
+  <h2>Ha idáig eljutottál...</h2>
+  <p>
+    ...akkor talán már látszik, mennyire szenvedélyesen állok a programozáshoz. <br>
+    Nem vagyok mindenben tökéletes, de amit csinálok, azt <strong>szívből</strong> csinálom. <br>
+    Minden projektem egy újabb lépés a fejlődés felé – és nem tervezem, hogy megálljak.
+  </p>
+  <p>
+    Ha úgy érzed, hogy lenne helyem a csapatodban, <strong>keress bátran!</strong><br>
+    (És ha csak dicsérni akarsz – azt is szívesen veszem. 😄)
+  </p>
+</section>
+
+
+        <footer data-aos="section fade-up">
+            <p>&copy; 2025 Bárány Péter</p>
+        </footer>
+
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="script.js"></script>
+        <script src="code.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+
+</html>
